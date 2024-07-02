@@ -7,6 +7,8 @@ async function execute(inputObj: any) {
     return await main(inputJson)
 }
 
+const apiKey=process.env.DEVDOCK_API
+
 const sampleInput = {
     "untrustedData": {
         "fid": 2,
@@ -30,7 +32,7 @@ async function test() {
         method: 'GET',
         path: '/ipfs/QmRvFKqhmNMTFr75EyLqbGY9Zq7M7SGtv18L6S4Pcig6nc',
         queries: { chatQuery: ["How to create an NFT on Starknet"] },
-        secret: { openaiApiKey: 'sk_db_HbC50G5m8BYCJZlKhwvpMf6eJdmp0ps5' },
+        secret: { devDockAPI: apiKey },
         headers: {},
     })
     console.log('GET RESULT:', JSON.parse(getResult))
@@ -41,7 +43,7 @@ async function test() {
         queries: {
             chatQuery: ["How to create an NFT on Starknet"]
         },
-        secret: { openaiApiKey: "sk_db_HbC50G5m8BYCJZlKhwvpMf6eJdmp0ps5" },
+        secret: { devDockAPI: apiKey },
         headers: {},
         body: JSON.stringify(sampleInput)
     })
