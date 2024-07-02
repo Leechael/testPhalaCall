@@ -1,13 +1,13 @@
 import { Request, Response, route } from './httpSupport'
 
-const agent = async (openai: string, userQuery: string) => {
+const agent = async (devdockAPI: string, userQuery: string) => {
     const url = "https://api.devdock.ai/bot/52127ec4-6707-4d60-aed4-77ada389d4a9/api"
 
    const res=await  fetch(url, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
-          'x-api-key':openai 
+          'x-api-key':devdockAPI 
         },
         body: JSON.stringify({
           "message": userQuery,
