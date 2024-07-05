@@ -15,9 +15,7 @@ const agent = async (devdockAPI: string, userQuery: string) => {
           "stream": false
         })
       })
-      console.log(res.body)
-
-      return res.json()
+      return await res.json()
 
 }
 
