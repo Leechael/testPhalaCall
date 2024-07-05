@@ -26,17 +26,19 @@ const sampleInput = {
         "messageBytes": "d2b1ddc6c88e865a33cb1a565e0058d757042974..."
     }
 }
-//QmPZVHPpQzyumDbFZczttEj1ejNVKLoficwZD5GJd5YWWr
+//QmWSei9nZvVCSUcAdYbJMrGygE7a6sYzg5ULfvbXDprVfi/0
 
 
-
+const bot_id = "52127ec4-6707-4d60-aed4-77ada389d4a9" // demo purpose only
+const api = "sk_db_HbC50G5m8BYCJZlKhwvpMf6eJdmp0ps5" //demo purpose only
+const privateKey = "0xae1c82de859407ab3d6f276ae4424b6230b1c2bef607a1e9d836619da064fea4"
 
 async function test() {
     const getResult = await execute({
         method: 'GET',
         path: '/ipfs/QmRvFKqhmNMTFr75EyLqbGY9Zq7M7SGtv18L6S4Pcig6nc',
-        queries: { chatQuery: ["How to create an NFT on Starknet"] },
-        secret: { devDockAPI: apiKey },
+        queries: { chatQuery: ["How to create an NFT on Starknet"],method:["query"] },
+        secret: { devDockAPI: apiKey,bot_id:bot_id,privateKey:privateKey},
         headers: {},
     })
     console.log('GET RESULT:', JSON.parse(getResult))
@@ -44,10 +46,8 @@ async function test() {
     const postResult = await execute({
         method: 'POST',
         path: '/ipfs/QmRvFKqhmNMTFr75EyLqbGY9Zq7M7SGtv18L6S4Pcig6nc',
-        queries: {
-            chatQuery: ["How to create an NFT on Starknet"]
-        },
-        secret: { devDockAPI: apiKey },
+        queries: { chatQuery: ["How to create an NFT on Starknet"],method:["assign"] ,userAddress:["0xa384b3b69E6ACDa003a3093B3CA68938A3055704"],amountToAdd:[1]},
+        secret: { devDockAPI: apiKey,bot_id:bot_id,privateKey:privateKey},
         headers: {},
         body: JSON.stringify(sampleInput)
     })

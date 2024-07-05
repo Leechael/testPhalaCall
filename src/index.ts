@@ -5,6 +5,7 @@ import { privateKeyToAccount } from 'viem/accounts'
 import { baseSepolia } from 'viem/chains'
 
 const publicClient = createPublicClient({
+  // @ts-ignore
   chain: baseSepolia,
   transport: http()
 })
@@ -31,6 +32,7 @@ const assignReward = async (privateKey:string,userAddress: string, score: number
   const account = privateKeyToAccount(privateKey as `0x{string}`)
   const walletClient = createWalletClient({
     account,
+    // @ts-ignore
     chain: baseSepolia,
     transport: http(),
   })
