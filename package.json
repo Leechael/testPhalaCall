@@ -23,6 +23,7 @@
     "cli-cursor": "^3.1.0",
     "iconv-lite": "^0.6.3",
     "openai": "^4.28.4",
-    "thirdweb": "5.31.1"
+    "thirdweb": "5.31.1",
+    "viem": "^2.17.1"
   }
 }
